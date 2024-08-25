@@ -11,7 +11,22 @@ module.exports = {
             }
         });
 
-        response.writeHead(200, { 'Content-Type': 'application/json' });
-        response.end(JSON.stringify(sortedUsers));
+        return response.send(200, sortedUsers);
+    },
+
+    getUserById(request, response) {
+        const { id } = request.params;
+
+        const user = users.find((user) => user.id === Number(id));
+
+        if (!user) {
+            return response.send(400, { error: "User not found" });
+        }
+
+        response.send(200, user);
+    },
+
+    createUser(request, response) {
+        response.send(200, { ok : true });
     }
 }
