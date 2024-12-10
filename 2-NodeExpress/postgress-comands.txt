@@ -1,0 +1,20 @@
+#Entrar no bash do banco pg
+docker exec -it pg bash
+
+#Entrar como root no terminal
+psql -U root
+
+#Listar todos os bancos
+\l
+
+#Conectar com o nome da base de dados na criação de tabelas
+\c + nome do banco de dados
+
+#Listar todas as tabelas
+\dt
+
+#Sair do psql(terminal bash do postgres)
+\q
+
+#Encerrar o terminal
+Control + D

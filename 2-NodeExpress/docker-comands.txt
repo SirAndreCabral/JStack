@@ -1,0 +1,33 @@
+#Baixar imagem do postgres 
+docker pull postgres
+
+#Rodar imagem do docker
+docker run --name pg -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -p 5432:5432 -d postgres
+docker run = roda o docker 
+--name pg = cria um nome para a imagem no caso nome é pg
+-e POSTGRES_USER=root = -e define como variavel de ambiente | POSTGRES_USER=root define que o usuario será root 
+-e POSTGRES_PASSWORD=root = -e define como variavel de ambiente | POSTGRES_PASSWORD=root define que o usuario será root
+-p 5432:5432 = -p define que será uma porta e 5432 é a porta da minha maquina, o : é repasse da requisição feita na porta minha maquina para a 5432 que é a porta do postgres
+
+#Listar tudo que está funcionando ou tudo
+docker ps | docker ps -a
+
+#Listar container ou tudo 
+docker container ls | docker container ls -a
+
+#Parar um container
+docker stop + id do container ou nome do container (pg)
+
+#Rodar um container
+docker start + id do container ou nome do container (pg) 
+
+#Listar imagem
+docker image ls
+
+#Remover uma imagem
+docker rmi + image id 
+Obs: Necessario parar e deletar o container que roda a imagem para deletar ela.
+
+#Remover um container
+docker container rm + name do container(pg)
+Obs: Para deletar um container é necessario parar o container antes // Docker stop pg ou id do container
