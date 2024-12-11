@@ -8,12 +8,13 @@
   },
   "dependencies": {
     "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
     "pg": "^8.13.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.9.1",
-    "eslint": "^9.9.1",
-    "globals": "^15.9.0",
+    "@eslint/js": "^9.16.0",
+    "eslint": "^9.16.0",
+    "globals": "^15.13.0",
     "nodemon": "^3.1.4"
   }
 }
