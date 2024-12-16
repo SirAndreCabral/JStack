@@ -7,11 +7,11 @@
     "workbench.editor.untitled.hint": "hidden",
     // Editor settings
     "editor.wordWrap": "on",
-    "editor.fontSize": 12,
+    "editor.fontSize": 14,
     "editor.lineHeight": 20,
     "terminal.integrated.fontSize": 12,
-    "editor.tabSize": 2,
-    "editor.fontFamily": "JetBrains Mono, Fira Code",
+    "editor.tabSize": 4,
+    "editor.fontFamily": "Fira Code, JetBrains Mono",
     "editor.fontLigatures": true,
     "editor.renderLineHighlight": "gutter",
     "editor.rulers": [
