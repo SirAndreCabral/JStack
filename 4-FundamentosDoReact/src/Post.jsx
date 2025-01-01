@@ -1,26 +1,37 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import PostHeader from "./PostHeader.jsx";
+
 export default function Post(props) {
   return (
     <>
       <article>
-        <strong>{props.post.title}</strong>
+        <PostHeader
+          onRemove={props.onRemove}
+          post={{
+            id: props.post.id,
+            title: props.post.title,
+            read: props.post.read,
+          }}
+        />
         <br />
         <small>{props.post.subtitle}</small>
         <br />
-        Likes: {props.likes}
+        Likes: {props.post.likes}
+        <br />
       </article>
-      <br />
     </>
   );
 }
 
-Post.PropTypes = {
-  id: PropTypes.number.isRequired,
-  likes: PropTypes.number.isRequired,
+Post.propTypes = {
+  onRemove: PropTypes.func.isRequired,
   post: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string,
+    likes: PropTypes.number.isRequired,
+    read: PropTypes.bool.isRequired,
   }).isRequired,
 };

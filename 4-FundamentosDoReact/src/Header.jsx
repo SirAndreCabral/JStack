@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
+import Button from "./Button.jsx";
+import { ThemeContext } from "./ThemeContext.jsx";
+
 const Header = (props) => {
-  console.log(props);
+  const { onToggleTheme } = useContext(ThemeContext);
 
   return (
     <>
       <h1>{props.title}</h1>
+      <Button onClick={onToggleTheme}>Mudar tema</Button>
       {props.children}
+      <hr />
       <hr />
     </>
   );
@@ -15,7 +20,7 @@ const Header = (props) => {
 
 export default Header;
 
-Header.PropTypes = {
+Header.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
